@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Teori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f3f4f6;
+            color: #444;
+            transition: all 0.5s ease;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .toggle-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #45a049;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #e2e8f0;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .section-header:hover {
+            background-color: #cbd5e1;
+        }
+        .section-content {
+            padding: 15px;
+            background-color: #f1f5f9;
+            margin: 0;
+            display: none;
+            border-radius: 5px;
+        }
+        .mode-buruk {
+            background-color: #333;
+            color: #ff0066;
+            font-family: "Comic Sans MS", cursive;
+        }
+        .mode-buruk .section-header {
+            background-color: #ffccd5;
+            color: #660033;
+        }
+        .mode-buruk .toggle-button {
+            background-color: #ff0066;
+        }
+        .mode-buruk .toggle-button:hover {
+            background-color: #cc0052;
+        }
+    </style>
+</head>
+<body>
+    <h1>LAPORAN TEORI</h1>
+    <h2>Muhammad Rizki Insani/202331319
+
+    <!-- Tombol untuk mengganti mode tampilan -->
+    <button class="toggle-button" onclick="toggleMode()">Ubah Mode</button>
+
+    <!-- Konten laporan teori -->
+    <div>
+        <div class="section-header" onclick="toggleContent(this)">Mengapa menggunakan CSS dan JavaScript dalam pemrograman web? <span>+</span></div>
+        <div class="section-content">
+            <p>CSS dan JavaScript adalah dua teknologi utama dalam pemrograman web yang membantu membuat halaman web lebih menarik dan interaktif...</p>
+        </div>
+
+        <div class="section-header" onclick="toggleContent(this)">Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web? <span>+</span></div>
+        <div class="section-content">
+            <p>CSS dan JavaScript dapat diintegrasikan ke dalam pemrograman web dengan beberapa cara: Internal, Eksternal, dan Inline...</p>
+        </div>
+
+        <div class="section-header" onclick="toggleContent(this)">Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS? <span>+</span></div>
+        <div class="section-content">
+            <p>Desain Konsisten, Efisiensi Waktu, dan Responsive Design...</p>
+        </div>
+
+        <div class="section-header" onclick="toggleContent(this)">Jelaskan apa saja keuntungan menggunakan Bootstrap? <span>+</span></div>
+        <div class="section-content">
+            <p>Bootstrap adalah framework CSS yang sangat populer yang membantu mempercepat pengembangan web...</p>
+        </div>
+
+        <div class="section-header" onclick="toggleContent(this)">Contoh Penggunaan Bootstrap <span>+</span></div>
+        <div class="section-content">
+            <p>Pada contoh ini, kita membuat tombol dengan memanfaatkan class btn btn-primary dari Bootstrap... <img src="Screenshot 2024-11-10 185629.png" alt="contoh Bootstrap" width="1200"></p>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menampilkan atau menyembunyikan konten
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            const symbol = element.querySelector("span");
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                symbol.textContent = "-";
+            } else {
+                content.style.display = "none";
+                symbol.textContent = "+";
+            }
+        }
+
+        // Fungsi untuk mengganti mode tampilan halaman
+        function toggleMode() {
+            document.body.classList.toggle("mode-buruk");
+        }
+
+        // Inisialisasi awal: sembunyikan konten di bawah sub-judul
+        document.querySelectorAll('.section-content').forEach(section => {
+            section.style.display = "none";
+        });
+    </script>
+</body>
+</html>
+
